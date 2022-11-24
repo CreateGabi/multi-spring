@@ -232,7 +232,8 @@ public class MemberDAO {
 
 	}
 
-	public void delete(String id) {
+	public int delete(String id) {
+		int result = 0;
 		// 자바에서 DBMS를 연결하려고 함.
 		// JDBC 프로그래밍 절차
 		// 4단계 절차
@@ -256,7 +257,7 @@ public class MemberDAO {
 			System.out.println("3. sql문 생성 성공");
 
 			// 4. sql문을 db서버에 보낸다.
-			int result = ps.executeUpdate();
+			result = ps.executeUpdate();
 			System.out.println("4. sql문 db서버로 전송 성공 반영된. row 수 >> " + result);
 
 			ps.close();
@@ -265,7 +266,7 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		return result;
 	}
 
 }

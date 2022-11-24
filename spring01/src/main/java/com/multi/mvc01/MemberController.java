@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller  // 스프링에 컨트롤러 역할을 하는 클래스라고 등록
+			 // 싱글톤으로 만들어주세요
 public class MemberController {
 
 	@Autowired  // 이미 만들어서 준비된 MemberDAO 객체의 주소를 찾아서 자동으로 그 주소를 아래의 변수인 dao에 넣어주세요
@@ -59,13 +60,19 @@ public class MemberController {
 	// 회원수정처리
 	// 회원탈퇴처리
 	@RequestMapping("delete.multi")
-	public void delete(String id) {
+	public String delete(String id) {
 		// 변수명이 다를 경우
 		// delete(@RequestParam("id") String writer)
 		System.out.println("받은 아이디는  " + id);
-		// dao.delete(id);
+		int result = dao.delete(id);
 		// 결과를 담는 페이지로 넘어가게 되어있음
 		// /WEB-INF/views/delete.jsp를 자동호출하게 되어있음
+		// spring 프로그램에 어떤 이름의 파일을 호출할지 이름을 리턴해주세요
+		if (result == 1) {
+			return "ok";
+		} else {
+			return "no";
+		}
 	}
 	// 전체회원정보처리
 	// 회워정보처리
