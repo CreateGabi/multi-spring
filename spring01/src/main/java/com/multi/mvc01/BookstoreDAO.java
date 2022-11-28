@@ -204,4 +204,35 @@ public class BookstoreDAO {
 		// 메서드의 처리를 다 끝내고, 결과를 보내줘라는 개념. 맨 끝에 써야함.
 		return bag;
 	} // one
+	
+	public ArrayList<BookstoreDTO> list() {
+		ArrayList<BookstoreDTO> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/school";
+			String user = "root";
+			String password = "1234";
+			Connection con = DriverManager.getConnection(url, user, password); // Connection
+			String sql = "select * from bookstore";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery(); // r의 결과는 table, cud는 숫자(실행된row수) //1
+			while (rs.next()) { // 결과값이 true이면!!
+				BookstoreDTO bag = new BookstoreDTO();
+				bag.setId(rs.getString(1));
+				bag.setTitle(rs.getString(2));
+				bag.setWriter(rs.getString(3));
+				bag.setPublish(rs.getString(4));
+				list.add(bag);
+			} // while
+			System.out.println("box(list)에 들어간 가방의 갯수>> " + list.size());
+			// db처리와 관련된 메모리 할당된 것 해제시켜주자.
+			ps.close();
+			con.close();
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// 메서드의 처리를 다 끝내고, 결과를 보내줘라는 개념. 맨 끝에 써야함.
+		return list;
+	} // list
 } // class

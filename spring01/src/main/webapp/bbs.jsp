@@ -21,8 +21,7 @@ writer : <input name="writer"><br>
 	<button>서버로 전송</button>
 </form>
 <hr>
-<h3>게시판 하나 검색</h3>
-<a href="one?id=100">100번 검색</a><br>
-<a href="one?id=200">200번 검색</a><br>
+<h3>게시판 전체 검색</h3>
+<a href="list2.multi">전체검색</a>
 </body>
 </html>

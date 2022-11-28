@@ -38,5 +38,8 @@
 	id : <input name="id"><br>
 	<button>서버로 전송</button>
 </form>
+<hr>
+<h3>도서 전체 검색</h3>
+<a href="listBookstore">전체검색</a>
 </body>
 </html>

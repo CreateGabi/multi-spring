@@ -1,5 +1,7 @@
 package com.multi.mvc01;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,10 +33,17 @@ public class BbsController {
 		}
 	}
 	
-	@RequestMapping("one")
+	@RequestMapping("one2.multi")
 	public void one(int id, Model model) {
 		BbsDTO dto = dao.one(id);
 		// views까지 처리결과인 dto를 전달해주는 역할
 		model.addAttribute("dto", dto);
+	}
+	
+	@RequestMapping("list2.multi")
+	public String list(Model model) {
+		ArrayList<BbsDTO> list = dao.list();
+		model.addAttribute("list", list);
+		return "list2";
 	}
 }
