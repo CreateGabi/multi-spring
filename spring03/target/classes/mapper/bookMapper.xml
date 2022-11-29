@@ -2,6 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="book">
 		
+	<insert id="create" parameterType="bookVO">
+		insert into BOOK value (null, #{name}, #{url}, #{img})
+	</insert>
+	
+	<update id="up2" parameterType="bookVO">
+		update BOOK set name = #{name} where id = #{id}
+	</update>
+	
+	<delete id="delete2" parameterType="bookVO">
+		delete from BOOK where id = #{id}
+	</delete>
+	
+	<select id="one" parameterType="bookVO" resultType="bookVO">
+		select * from BOOK where id = #{id}
+	</select>
+	
+	<select id="all" resultType="bookVO">
+		select * from BOOK
+	</select>
 </mapper>
 
 
