@@ -30,8 +30,7 @@
 			$.ajax({
 				url : "bbsList2",
 				data : {
-					start : 1,
-					end : 5
+					page : 1
 				},
 				success : function(result) {
 					$('#d1').html(result)
@@ -45,8 +44,7 @@
 			$.ajax({
 				url : "bbsList2",
 				data : {
-					start : 6,
-					end : 10
+					page : 2
 				},
 				success : function(result) {
 					$('#d1').html(result)
@@ -62,6 +60,9 @@
 <body>
 <h3>게시물 목록</h3>
 <hr color="red">
+<a href="bbsAll?page=1">
+	<button>게시판목록가지고오기</button>
+</a>
 <button id="b1">페이징 연습(1-5까지 가지고 오기)</button>
 <button id="b2">1페이지(1-5까지 가지고 오기)</button>
 <button id="b3">2페이지(6-10까지 가지고 오기)</button>

@@ -14,11 +14,16 @@
 <button type="submit">서버로 전송</button>
 </form>
 <hr>
-
+<h3>북마크전체검색(paging기능 구현)</h3>
+<a href="bookAll?page=1">
+	<button>전체 검색 요청</button>
+</a>
+<hr>
 <h3>북마크전체검색</h3>
 <a href="all2">
 	<button>전체 검색 요청</button>
 </a>
+
 <hr>
 <h3>북마크 추가</h3>
 <form action="insert.do">

@@ -2,16 +2,25 @@ package com.multi.mvc03;
 
 public class BookVO {
 
-	private String id;
+	private int book_no;
+	private int id;
 	private String name;
 	private String url;
 	private String img;
 
-	public String getId() {
+	public int getBook_no() {
+		return book_no;
+	}
+	
+	public void setBook_no(int book_no) {
+		this.book_no = book_no;
+	}
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -41,7 +50,7 @@ public class BookVO {
 
 	@Override
 	public String toString() {
-		return "BookVO [id=" + id + ", name=" + name + ", url=" + url + ", img=" + img + "]";
+		return "BookVO [book_no=" + book_no + ", id=" + id + ", name=" + name + ", url=" + url + ", img=" + img + "]";
 	}
 
 }

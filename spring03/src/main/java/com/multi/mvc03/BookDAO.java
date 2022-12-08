@@ -33,4 +33,12 @@ public class BookDAO {
 	public List<BookVO> all() {
 		return my.selectList("book.all");
 	}
+	
+	public List<BookVO> bookAll(PageVO vo) {
+		return my.selectList("book.bookAll", vo);
+	}
+	
+	public int count() {
+		return my.selectOne("book.count");
+	}
 }

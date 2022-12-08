@@ -18,4 +18,17 @@
 			from bbs b) b2
 		where b2.bbs_no between #{start} and #{end}
 	</select>
+	
+	<select id="all" parameterType="pageVO" resultType="bbs3VO">
+		select * from (
+			select
+				row_number() over(order by id desc) as bbs_no,
+				b.*
+			from bbs b) b2
+		where b2.bbs_no between #{start} and #{end}
+	</select>
+	
+	<select id="count" resultType="Integer">
+		select count(*) from bbs
+	</select>
 </mapper>

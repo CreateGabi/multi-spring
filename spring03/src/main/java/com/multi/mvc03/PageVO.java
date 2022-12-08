@@ -5,7 +5,14 @@ public class PageVO {
 	private int start;
 	private int end;
 	private int page;
+	//private int one
 	
+	public void setStartEnd(int page) {
+		start = 1 + (page - 1) * 10;
+		end = page * 10;
+		//start = (page * one) - page
+		//end = page * one
+	}
 	public int getStart() {
 		return start;
 	}
