@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 
 	@Autowired
-	MemberDAO dao;
+	MemberDAOInterface dao;
 	
 	@RequestMapping("create")
 	public void insert(MemberVO vo) {

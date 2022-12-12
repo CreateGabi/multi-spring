@@ -3,7 +3,7 @@ package com.multi.mvc03;
 public class BookVO {
 
 	private int book_no;
-	private int id;
+	private String id;
 	private String name;
 	private String url;
 	private String img;
@@ -16,11 +16,11 @@ public class BookVO {
 		this.book_no = book_no;
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
